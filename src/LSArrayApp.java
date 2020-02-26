@@ -5,6 +5,7 @@ public class LSArrayApp {
         File file = new File("C:\Users\Taboka\Desktop\Course\CSC2001F\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
+        String stt;
         while ((st = br.readLine()) != null){
             System.out.println(st);}
     }
