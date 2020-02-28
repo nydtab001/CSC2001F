@@ -20,13 +20,20 @@ public class LSArrayApp {
     }
 
     public String printAreas(String stage,String day,String startTime){
-        return "VOILA!!!";
+        String[] temp = {stage,day,startTime};
+        for (int i = 0;i<data.length;i++){
+            String[] temp2=arr_time[i].split("_",3);
+            if (temp==temp2){
+                return arr_areas[i];
+            }
+        }
+        return "not found";
     }
 
     public String[] printAllAreas(){
         String[] arr = new String[2976];
         for (int i=0;i<arr_time.length;i++){
-            arr[i]=arr_time[i]+" load sheds areas "+arr_areas[i];
+            arr[i]="|stage: "+(arr_time[i].split("_",3))[0]+"|day: "+(arr_time[i].split("_",3))[1]+"|areas: "+arr_areas[i]+"|time: "+(arr_time[i].split("_",3))[2]+"00hrs|";
         }
         return arr;
     }
