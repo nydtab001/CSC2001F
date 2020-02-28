@@ -1,9 +1,10 @@
 import java.util.*;
 import java.io.*;
-public class LSArrayApp extends Data{
-    private String all = "";
+public class LSArrayApp {
+    private String[] arr_time = new String[2976];
+    private String[] arr_areas = new String[2976];
     private String list = "";
-    private String[] data = new String[2976];
+    private Data[] data = new Data[2976];
 
     public LSArrayApp()throws Exception{
         File file = new File("C:\\Users\\Taboka\\Desktop\\Course\\CSC2001F\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
@@ -11,7 +12,9 @@ public class LSArrayApp extends Data{
         String st;
         int i=0;
         while ((st = br.readLine()) != null){
-            data[i]=st;
+            data[i]=new Data(st);
+            arr_time[i]=data[i].getTime();
+            arr_areas[i]=data[i].getAreas();
             i=i+1;
         }
     }
@@ -21,7 +24,11 @@ public class LSArrayApp extends Data{
     }
 
     public String[] printAllAreas(){
-        return data;
+        String[] arr = new String[2976];
+        for (int i=0;i<arr_time.length;i++){
+            arr[i]=arr_time[i]+" load sheds areas "+arr_areas[i];
+        }
+        return arr;
     }
 
     public static void main(String[] args){
