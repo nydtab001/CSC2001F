@@ -27,7 +27,7 @@ public class LSBSTApp {
     public String printAreas(String stage,String day,String startTime){
         Data temp = new Data(stage+"_"+day+"_"+startTime+" "+"null");
         if (bst.find(temp)==null){return "not found";}
-        return ((bst.find(temp)).data).toString();
+        return ((bst.find(temp)).data).getAreas();
     }
 
     public static void main(String[] args){
