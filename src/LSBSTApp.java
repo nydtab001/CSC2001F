@@ -32,12 +32,13 @@ public class LSBSTApp {
 
     public static void main(String[] args){
         try{
+            LSBSTApp test;
             if (args.length==0) {
-                LSBSTApp test = new LSBSTApp();
+                test = new LSBSTApp();
                 test.printAllAreas();
             }
             else if (args.length==3){
-                LSBSTApp test = new LSBSTApp();
+                test = new LSBSTApp();
                 System.out.println("day: "+args[1]);
                 System.out.println("time: "+args[2]+":00");
                 System.out.println("Areas affected: "+test.printAreas(args[0],args[1],args[2]));
