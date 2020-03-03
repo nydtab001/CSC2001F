@@ -27,22 +27,6 @@ public class Data implements Comparable<Data> {
         return getTime()+" "+getAreas();
     }
 
-/*    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Data data = (Data) o;
-        if (data.toString()==this.toString()){
-            return true;
-        }
-        return false;
-    }
-
-/*    @Override
-    public int hashCode() {
-        return Objects.hash(load_data, areas, content);
-    }*/
-
     @Override
     public int compareTo(Data o) {
         if (o.getTime().equals(this.getTime())){
