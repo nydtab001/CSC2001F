@@ -7,6 +7,11 @@ public class LSArrayApp {
     private Data[] data = new Data[2976];
     private int opCount = 0;
 
+    /**
+     * fetches file with load shedding data from a specific path and inserts the data read from each line into an array
+     * @throws Exception If the file is not found
+     */
+
     public LSArrayApp()throws Exception{
         File file = new File("C:\\Users\\Taboka\\IdeaProjects\\untitled\\CSC2001F\\files\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -19,6 +24,15 @@ public class LSArrayApp {
             i=i+1;
         }
     }
+
+    /**
+     * Gets the areas affected by load shedding matching the input stage, day and start time
+     *
+     * @param stage the load shedding stage
+     * @param day the day of the month of load shedding
+     * @param startTime the start time of load shedding
+     * @return the areas affected based on the above parameters
+     */
 
     public String printAreas(String stage,String day,String startTime)throws IOException{
         String[] temp = {stage,day,startTime};
@@ -41,6 +55,11 @@ public class LSArrayApp {
         return "not found";
     }
 
+    /**
+     * prints all data in the binary tree in order of lowest to highest
+     *
+     */
+
     public String[] printAllAreas(){
         String[] arr = new String[2976];
         for (int i=0;i<arr_time.length;i++){
@@ -48,6 +67,12 @@ public class LSArrayApp {
         }
         return arr;
     }
+
+    /**
+     * Prints out all the areas of load shedding for all stages, days and times if no parameters are given to the application.
+     * If parameters are given, the details of the matching areas are printed out
+     * @param args data input of the application
+     */
 
     public static void main(String[] args){
         try{
