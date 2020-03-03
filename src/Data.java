@@ -23,7 +23,7 @@ public class Data {
         System.out.println(test.getAreas());
     }
 
-    public String toString(String data){
-        return getTime();
+    public String toString(){
+        return getTime()+" "+getAreas();
     }
 }
