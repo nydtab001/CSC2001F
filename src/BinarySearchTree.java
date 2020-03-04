@@ -1,9 +1,9 @@
 // Hussein's Binary Search Tree
 // 27 March 2017
 // Hussein Suleman
-
 public class BinarySearchTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
+   public int opCount1 = 1;
    public void insert ( dataType d )
    {
       if (root == null)
@@ -38,12 +38,18 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    }
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
-      if (d.compareTo (node.data) == 0)
-         return node;
-      else if (d.compareTo (node.data) < 0)
-         return (node.left == null) ? null : find (d, node.left);
-      else
-         return (node.right == null) ? null : find (d, node.right);
+      if (d.compareTo (node.data) == 0){
+         return node; }
+      else if (d.compareTo (node.data) < 0){
+         opCount1++;
+         return (node.left == null) ? null : find (d, node.left);}
+      else{
+         opCount1++;
+         return (node.right == null) ? null : find (d, node.right);}
+   }
+
+   public int getOpCount1(){
+      return opCount1;
    }
    
    public void delete ( dataType d )

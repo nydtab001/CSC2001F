@@ -13,7 +13,7 @@ public class LSBSTApp {
      */
 
     public LSBSTApp()throws Exception{
-        File file = new File("C:\\Users\\Taboka\\IdeaProjects\\untitled\\CSC2001F\\files\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+        File file = new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         int i=0;
@@ -42,9 +42,15 @@ public class LSBSTApp {
      * @return the areas affected based on the above parameters
      */
 
-    public String printAreas(String stage,String day,String startTime){
+    public String printAreas(String stage,String day,String startTime)throws IOException{
         Data temp = new Data(stage+"_"+day+"_"+startTime+" "+"null");
         if (bst.find(temp)==null){return "not found";}
+        BinaryTreeNode<Data> temp_node = bst.find(temp);
+        FileWriter fw=new FileWriter("output1.txt");
+        int opCount = bst.getOpCount1();
+        fw.write(String.valueOf(opCount));
+        fw.close();
+        int x = bst.getOpCount1();
         return ((bst.find(temp)).data).getAreas();
     }
 
