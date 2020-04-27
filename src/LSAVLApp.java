@@ -44,7 +44,7 @@ public class LSAVLApp {
         if (av.find(temp)==null){
             System.out.println(av.getOpCount1()+"operations performed");
             return "not found";}
-        System.out.println(av.getOpCount1()+"operations performedd");
+        System.out.println(av.getOpCount1()+"operations performed");
         return ((av.find(temp)).data).getAreas();
     }
 

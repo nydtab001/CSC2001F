@@ -13,7 +13,7 @@ public class LSBSTApp {
      */
 
     public LSBSTApp()throws Exception{
-        File file = new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+        File file = new File("src\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         int i=0;
@@ -25,7 +25,7 @@ public class LSBSTApp {
     }
 
     /**
-     * prints all data in the binary tree in order of lowest to highest
+     * prints all data in the binary tree in numerical order of lowest to highest
      *
      */
 
