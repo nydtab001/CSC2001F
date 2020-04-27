@@ -13,7 +13,7 @@ public class LSArrayApp {
      */
 
     public LSArrayApp()throws Exception{
-        File file = new File("C:\\Users\\Taboka\\IdeaProjects\\untitled\\CSC2001F\\files\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+        File file = new File("C:\\Users\\Taboka\\IdeaProjects\\untitled\\CSC2001F\\src\\Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         int i=0;
